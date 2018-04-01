@@ -1,0 +1,140 @@
+﻿@model Visit_Manager.Models.Employee_model
+@{
+    Layout = null;
+    ViewBag.Title = Resources.Global.Login;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - @Html.Raw(Resources.Global.Visit_manager) </title>
+
+    <link type="image/x-icon" rel="shortcut icon" href="~/Images/favicon.ico" />
+    <link type="image/ico" rel="icon" href="~/Images/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/bootstrap-timepicker.min.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/view_login.css" />@*Custom style*@
+
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.min.js"></script>@*Jquery script must be always on top*@
+    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/view_login.js"></script>@*Custom script*@
+
+</head>
+
+<body>
+
+    <div class="container center welcome">
+        <div class=" row ">
+            <div class="col-md-offset-4 col-md-4">
+                @Html.Raw(Resources.Global.Welcome_info)
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <div class=" row ">
+            <div class="col-md-offset-4 col-md-4 welcome_2nd_line">
+                @Html.Raw(Resources.Global.Welcome_info_2nd_line)
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+    <br />
+
+
+
+    @using (Html.BeginForm("Login_user", "Employee", FormMethod.Post))
+    {
+        <div class="container center">
+            <div class="row">
+                <label class="sr-only">tbx_login</label>
+                <div class="col-md-offset-4 col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        @Html.TextBoxFor(a => a.Login, new
+                   {
+                       @class = "form-control",
+                       @id = "tbx_login",
+                       @placeholder = Html.Raw(Resources.Global.Login_name_surname),
+                       @type = "text",
+                       @maxlength = "25",
+                       @pattern = ".{3,25}",
+                       @title = Html.Raw(Resources.Global.Login_must_contain),
+                       @required = "required"
+                   })
+                    </div>
+                </div>
+                <div class="col-md-4 valid_message">
+                    @Html.ValidationSummary(true)
+                    @Html.DisplayTextFor(a => a.Name_valid_message)
+                </div>
+            </div>
+
+
+            <div class="row">
+                <label class="sr-only">tbx_password</label>
+                <div class="col-md-offset-4 col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        @Html.TextBoxFor(a => a.Password, new
+                   {
+                       @class = "form-control",
+                       @id = "tbx_password",
+                       @placeholder = Html.Raw(Resources.Global.Password),
+                       @type = "password",
+                       @maxlength = "10",
+                       @pattern = ".{2,10}",
+                       @title = Html.Raw(Resources.Global.Password_must_contain),
+                       @required = "required"
+                   })
+                    </div>
+                </div>
+                <div class="col-md-4 valid_message">
+                    @Html.ValidationSummary(true)
+                    @Html.DisplayTextFor(a => a.Password_valid_message)
+                </div>
+            </div>
+
+
+            <div class="row">
+                <label class="sr-only">Remember_me</label>
+                <div class="col-md-offset-4 col-md-4 col-md-offset-4">
+                    <div class="input-group">
+                        @Html.CheckBoxFor(a => a.Remember_me, new
+                   {
+                       @class = "form-check-input",
+                       @type = "checkbox"
+                   })
+                        @Html.DisplayNameFor(a => a.Remember_me)
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <label class="sr-only">btn_login</label>
+                <div class="col-md-offset-4 col-md-4 col-md-offset-4">
+                    <div class="input-group">
+                        <button class="btn btn-success"
+                                id="btn_login"
+                                name="btn_login"
+                                type="submit"
+                                onclick="Remove_html()">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            @Html.Raw(Resources.Global.Sign_In)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+</body>
+</html>

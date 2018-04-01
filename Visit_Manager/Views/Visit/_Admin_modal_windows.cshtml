@@ -1,0 +1,472 @@
+﻿<!-- #region Modal window to add new employee -->
+<form id="add_employee_form">
+
+
+    <div class="modal fade" id="modal_add_employee" tabindex="-1" position="fixed" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--.modal-content-->
+
+
+                <div class="modal-header">
+                    <!--.modal-header-->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">@Html.Raw(Resources.Global.New_employee)</h4>
+                </div>
+
+
+                <div class="modal-body">
+                    <!--.modal-body-->
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-1"></div>
+
+                            <label class="sr-only">@Html.Raw(Resources.Global.New_employee)</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="add_employee_name"
+                                           name="add_employee_name"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Name)"
+                                           maxlength="12"
+                                           required />
+                                </div>
+                            </div>
+
+                            <label class="sr-only">add_employee_surname</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="add_employee_surname"
+                                           name="add_employee_surname"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Surname)"
+                                           maxlength="12"
+                                           required />
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-1"></div>
+
+                            <label class="sr-only">add_employee_password</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="add_employee_password"
+                                           name="add_employee_password"
+                                           type="password"
+                                           placeholder="@Html.Raw(Resources.Global.Password)"
+                                           maxlength="10"
+                                           pattern=".{2,10}"
+                                           title="@Html.Raw(Resources.Global.Password_must_contain)"
+                                           required />
+                                </div>
+                            </div>
+
+                            <label class="sr-only">add_employee_password_confirm</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="add_employee_password_confirm"
+                                           name="add_employee_password_confirm"
+                                           type="password"
+                                           placeholder="@Html.Raw(Resources.Global.Password_confirm)"
+                                           maxlength="10"
+                                           pattern=".{2,10}"
+                                           title="@Html.Raw(Resources.Global.Password_must_contain)"
+                                           required />
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="modal-footer">
+                        <!--Modal footer-->
+                        <button class="btn btn-success" id="add_new_employee" type="submit">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            @Html.Raw(Resources.Global.Save)
+                        </button>
+                    </div>
+
+                </div><!--End .modal-body-->
+
+
+            </div><!--End .modal-content -->
+        </div><!--End .modal-dialog -->
+    </div><!--End .modal -->
+</form>
+
+<!-- #endregion -->
+<!-- #region Modal window to edit employee -->
+<form id="edit_employee_form">
+
+
+    <div class="modal fade" id="modal_edit_employee" tabindex="-1" position="fixed" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--.modal-content-->
+
+
+                <div class="modal-header">
+                    <!--.modal-header-->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class=" col-md-4">
+                            <h4 class="modal-title" id="gridSystemModalLabel">@Html.Raw(Resources.Global.Edit_employee)</h4>
+                        </div>
+
+                        <div class=" col-md-5">
+                            <label class="sr-only">edit_ddl_employee_id</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                <select class=" form-control"
+                                        id="edit_ddl_employee_id"
+                                        name="edit_ddl_employee_id"
+                                        placeholder="@Html.Raw(Resources.Global.Select_doctor)"
+                                        onchange="Set_employee_data_to_inputs(this.value)"
+                                        required></select>
+                            </div>
+                        </div>
+                        <div class=" col-md-3"></div>
+                    </div>
+                </div>
+
+
+                <div class="modal-body">
+                    <!--.modal-body-->
+
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-1"></div>
+
+                            <label class="sr-only">edit_employee_name</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="edit_employee_name"
+                                           name="edit_employee_name"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Name)"
+                                           maxlength="12"
+                                           disabled
+                                           required />
+                                </div>
+                            </div>
+
+                            <label class="sr-only">edit_employee_surname</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="edit_employee_surname"
+                                           name="edit_employee_surname"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Surname)"
+                                           maxlength="12"
+                                           disabled
+                                           required />
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="modal-footer">
+                        <!--Modal footer-->
+                        <button class="btn btn-default btn_remove"
+                                id="btn_remove_employee"
+                                type="button"
+                                disabled
+                                onclick="Remove_employee(this.value);">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true">
+                                @Html.Raw(Resources.Global.Remove)
+                            </span>
+
+                        </button>
+
+                        <button class="btn btn-success"
+                                id="btn_edit_employee"
+                                type="submit"
+                                disabled>
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            @Html.Raw(Resources.Global.Save)
+                        </button>
+                    </div>
+                </div><!--End .modal-body-->
+
+
+            </div><!--End .modal-content -->
+        </div><!--End .modal-dialog -->
+    </div><!--End .modal -->
+</form>
+
+<!-- #endregion -->
+<!-- #region Modal window to add new visit type -->
+<form id="add_visit_type_form">
+
+
+    <div class="modal fade" id="modal_add_visit_type" tabindex="-1" position="fixed" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--.modal-content-->
+
+
+                <div class="modal-header">
+                    <!--.modal-header-->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">@Html.Raw(Resources.Global.New_visit_type)</h4>
+                </div>
+
+
+                <div class="modal-body">
+                    <!--.modal-body-->
+
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-3"></div>
+
+                            <label class="sr-only">add_visit_type_name</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
+                                    <input class="form-control"
+                                           id="add_visit_type_name"
+                                           name="add_visit_type_name"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Visit_type)"
+                                           maxlength="16"
+                                           required />
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="modal-footer">
+                        <!--Modal footer-->
+                        <button class="btn btn-success" type="submit">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            @Html.Raw(Resources.Global.Save)
+                        </button>
+                    </div>
+
+                </div><!--End .modal-body-->
+
+
+            </div><!--End .modal-content -->
+        </div><!--End .modal-dialog -->
+    </div><!--End .modal -->
+</form>
+
+<!-- #endregion -->
+<!-- #region Modal window to edit visit type -->
+<form id="edit_visit_type_form">
+
+
+    <div class="modal fade" id="modal_edit_visit_type" tabindex="-1" position="fixed" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--.modal-content-->
+
+
+                <div class="modal-header">
+                    <!--.modal-header-->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">@Html.Raw(Resources.Global.Edit_visit_type)</h4>
+                </div>
+
+
+                <div class="modal-body">
+                    <!--.modal-body-->
+
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-1"></div>
+
+                            <div class=" col-md-5">
+                                <label class="sr-only">edit_ddl_visit_type_id</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
+                                    <select class=" form-control"
+                                            id="edit_ddl_visit_type_id"
+                                            name="edit_ddl_visit_type_id"
+                                            placeholder="@Html.Raw(Resources.Global.Select_visit_type)"
+                                            onchange="Set_visit_type_to_input(this.value)"
+                                            required></select>
+                                </div>
+                            </div>
+
+                            <label class="sr-only">edit_visit_type_name</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
+                                    <input class="form-control"
+                                           id="edit_visit_type_name"
+                                           name="edit_visit_type_name"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Visit_type)"
+                                           maxlength="16"
+                                           disabled
+                                           required />
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+
+                    <div class="modal-footer">
+                        <!--Modal footer-->
+                        <button class="btn btn-default btn_remove"
+                                id="btn_remove_visit_type"
+                                type="button"
+                                disabled
+                                onclick="Remove_visit_type(this.value);">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true">
+                                @Html.Raw(Resources.Global.Remove)
+                            </span>
+                        </button>
+                        <button class="btn btn-success" id="btn_edit_visit_type" disabled type="submit">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            @Html.Raw(Resources.Global.Save)
+                        </button>
+                    </div>
+
+                </div><!--End .modal-body-->
+
+
+            </div><!--End .modal-content -->
+        </div><!--End .modal-dialog -->
+    </div><!--End .modal -->
+</form>
+
+<!-- #endregion -->
+<!-- #region Modal window to change password -->
+<form id="change_password_form">
+
+
+    <div class="modal fade" id="modal_change_password" tabindex="-1" position="fixed" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--.modal-content-->
+
+
+                <div class="modal-header">
+                    <!--.modal-header-->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="row">
+                        <div class=" col-md-4">
+                            <h4 class="modal-title" id="gridSystemModalLabel">@Html.Raw(Resources.Global.Change_password)</h4>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label class="sr-only">change_old_password</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                <input class="form-control"
+                                       id="change_old_password"
+                                       name="change_old_password"
+                                       type="password"
+                                       placeholder="@Html.Raw(Resources.Global.Password_current)"
+                                       maxlength="10"
+                                       pattern=".{2,10}"
+                                       title="@Html.Raw(Resources.Global.Password_must_contain)"
+                                       required />
+                            </div>
+                        </div>
+                        <div class=" col-md-3"></div>
+                    </div>
+                </div>
+
+
+                <div class="modal-body">
+                    <!--.modal-body-->
+
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-1"></div>
+
+                            <label class="sr-only">change_new_password</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                    <input class="form-control"
+                                           id="change_new_password"
+                                           name="change_new_password"
+                                           type="password"
+                                           placeholder="@Html.Raw(Resources.Global.Password_new)"
+                                           maxlength="10"
+                                           pattern=".{2,10}"
+                                           title="@Html.Raw(Resources.Global.Password_must_contain)"
+                                           required />
+                                </div>
+                            </div>
+
+                            <label class="sr-only">change_new_password_confirm</label>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+                                    <input class="form-control"
+                                           id="change_new_password_confirm"
+                                           name="change_new_password_confirm"
+                                           type="password"
+                                           placeholder="@Html.Raw(Resources.Global.Password_new_confirm)"
+                                           maxlength="10"
+                                           pattern=".{2,10}"
+                                           title="@Html.Raw(Resources.Global.Password_must_contain)"
+                                           required />
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="modal-footer">
+                        <!--Modal footer-->
+
+                        <button class="btn btn-success"
+                                id="change_password"
+                                type="submit">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
+                            @Html.Raw(Resources.Global.Save)
+                        </button>
+                    </div>
+                </div><!--End .modal-body-->
+
+
+            </div><!--End .modal-content -->
+        </div><!--End .modal-dialog -->
+    </div><!--End .modal -->
+</form>
+
+<!-- #endregion -->

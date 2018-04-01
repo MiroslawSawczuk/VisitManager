@@ -1,0 +1,521 @@
+﻿@model Visit_Manager.Models.Visit_model
+@*model is necessery to set ddl*@
+<!-- #region Modal window to add visit -->
+<form id="add_visit_form" method="post">
+
+
+    <div class="modal fade" id="modal_add_visit" tabindex="-1" position="fixed" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--.modal-content-->
+
+                <div class="modal-header">
+                    <!--.modal-header-->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">@Html.Raw(Resources.Global.Order_visit)</h4>
+                </div>
+
+                <div class="modal-body">
+                    <!--.modal-body-->
+
+                    <div class="row"></div>
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">add_visit_date</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <input class="datepicker form-control"
+                                           id="add_visit_date"
+                                           name="add_visit_date"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Visit_date)"
+                                           readonly="readonly"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">add_ddl_employee_id</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    @Html.DropDownListFor(a => a.Employee_id,
+                                             Model.List_of_employees_to_ddl, Resources.Global.Select_doctor, new
+                                                      {
+                                                          @class = "form-control",
+                                                          @type = "text",
+                                                          @required = "1",
+                                                          @id = "add_ddl_employee_id",
+                                                          @name = "add_ddl_employee_id",
+                                                      })
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">add_start_time</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                    <input class="form-control input-small timepicker_in_modal"
+                                           id="add_start_time"
+                                           name="add_start_time"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Start_time)"
+                                           readonly="readonly"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">add_end_time</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                    <input class="form-control input-small timepicker_in_modal"
+                                           id="add_end_time"
+                                           name="add_end_time"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.End_time)"
+                                           readonly="readonly"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">add_client_name</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="add_client_name"
+                                           name="add_client_name"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Client_name)"
+                                           maxlength="12"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">add_client_surname</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="add_client_surname"
+                                           name="add_client_surname"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Client_surname)"
+                                           maxlength="12"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">add_client_tel_number</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+                                    <input class="form-control"
+                                           id="add_client_tel_number"
+                                           name="add_client_tel_number"
+                                           type="tel"
+                                           placeholder="@Html.Raw(Resources.Global.Telephone_number)"
+                                           maxlength="9"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">add_client_email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                    <input class="form-control"
+                                           id="add_client_email"
+                                           name="add_client_email"
+                                           type="email"
+                                           placeholder="@Html.Raw(Resources.Global.Email_adress)"
+                                           maxlength="30"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">add_ddl_visit_type_id</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
+                                    @Html.DropDownListFor(a => a.Type_id, Model.List_of_visit_types_to_ddl, Resources.Global.Select_visit_type, new
+                                                      {
+                                                          @class = "form-control",
+                                                          @type = "text",
+                                                          @required = "1",
+                                                          @id = "add_ddl_visit_type_id",
+                                                          @name = "add_ddl_visit_type_id",
+                                                          @onchange = "Add_disable_if_val_1(this.value)",
+                                                      })
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-5">
+                                <label class="sr-only">add_price_visit</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                                    <input class="form-control"
+                                           id="add_price_visit"
+                                           name="add_price_visit"
+                                           type="tel"
+                                           placeholder="@Html.Raw(Resources.Global.Cost_of_visit)"
+                                           maxlength="4"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">add_type_unclassified</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                                    <textarea class="form-control"
+                                              rows="4"
+                                              id="add_type_unclassified"
+                                              name="add_type_unclassified"
+                                              placeholder="@Html.Raw(Resources.Global.Other_visit_type)"
+                                              disabled="disabled"
+                                              maxlength="50"
+                                              required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">add_describe_visit</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                                    <textarea class="form-control"
+                                              rows="4"
+                                              id="add_describe_visit"
+                                              name="add_describe_visit"
+                                              placeholder="@Html.Raw(Resources.Global.Additional_information)"
+                                              maxlength="50"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="modal-footer">
+                        <!--Modal footer-->
+                        <button class="btn btn-success" id="btn_add_visit" type="submit">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>@Html.Raw(Resources.Global.Save)
+                        </button>
+                    </div>
+
+                </div><!--End .modal-body-->
+
+            </div><!--End .modal-content -->
+        </div><!--End .modal-dialog -->
+    </div><!--End .modal -->
+
+</form>
+<!-- #endregion -->
+<!-- #region Modal window to edit visit -->
+<form id="edit_visit_form" method="post">
+
+
+    <div class="modal fade " id="modal_edit_visit" tabindex="-1" position="fixed" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!--.modal-content-->
+
+
+                <div class="modal-header">
+                    <!--.modal-header-->
+                    <button class="close" type="button" data-dismiss="modal" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">@Html.Raw(Resources.Global.Edit_visit)</h4>
+                </div>
+
+
+                <div class="modal-body">
+                    <!--.modal-body-->
+
+                    <div class="row"></div>
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">edit_visit_date</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <input class="datepicker form-control"
+                                           id="edit_visit_date"
+                                           name="edit_visit_date"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Visit_date)"
+                                           readonly="readonly"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">edit_ddl_employee_id</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    @Html.DropDownListFor(a => a.Employee_id, Model.List_of_employees_to_ddl, Resources.Global.Select_doctor, new
+                                {
+                                    @class = "form-control",
+                                    @id = "edit_ddl_employee_id",
+                                    @name = "edit_ddl_employee_id",
+                                    @type = "text",
+                                    @required = "1",
+                                    @value = "0",
+                                })
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">edit_start_time</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                    <input class="form-control input-small timepicker_in_modal"
+                                           id="edit_start_time"
+                                           name="edit_start_time"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Start_time)"
+                                           readonly="readonly"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">edit_end_time</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                    <input class="form-control input-small timepicker_in_modal"
+                                           id="edit_end_time"
+                                           name="edit_end_time"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.End_time)"
+                                           readonly="readonly"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">edit_client_name</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="edit_client_name"
+                                           name="edit_client_name"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Client_name)"
+                                           maxlength="12"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">edit_client_surname</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                                    <input class="form-control"
+                                           id="edit_client_surname"
+                                           name="edit_client_surname"
+                                           type="text"
+                                           placeholder="@Html.Raw(Resources.Global.Client_surname)"
+                                           maxlength="12"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">edit_client_tel_number</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+                                    <input class="form-control"
+                                           id="edit_client_tel_number"
+                                           name="edit_client_tel_number"
+                                           type="tel"
+                                           placeholder="@Html.Raw(Resources.Global.Telephone_number)"
+                                           maxlength="9"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">edit_client_email</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                                    <input class="form-control"
+                                           id="edit_client_email"
+                                           name="edit_client_email"
+                                           type="email"
+                                           placeholder="@Html.Raw(Resources.Global.Email_adress)"
+                                           maxlength="30"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">edit_ddl_visit_type_id</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-list"></span></span>
+                                    @Html.DropDownListFor(a => a.Type_id,
+                                    Model.List_of_visit_types_to_ddl, Resources.Global.Select_visit_type, new
+                                              {
+                                                  @class = "form-control",
+                                                  @type = "text",
+                                                  @required = "1",
+                                                  @id = "edit_ddl_visit_type_id",
+                                                  @name = "edit_ddl_visit_type_id",
+                                                  @onchange = "Edit_disable_if_val_1(this.value)"
+                                              })
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">edit_price_visit</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
+                                    <input class="form-control"
+                                           id="edit_price_visit"
+                                           name="edit_price_visit"
+                                           type="tel"
+                                           placeholder="@Html.Raw(Resources.Global.Cost_of_visit)"
+                                           maxlength="4"
+                                           required />
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="row">
+                        <div class="form-inline">
+
+                            <div class="col-md-offset-1 col-md-5">
+                                <label class="sr-only">edit_type_unclassified</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                                    <textarea class="form-control"
+                                              rows="4"
+                                              id="edit_type_unclassified"
+                                              name="edit_type_unclassified"
+                                              placeholder="@Html.Raw(Resources.Global.Other_visit_type)"
+                                              maxlength="50"
+                                              required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <label class="sr-only">edit_describe_visit</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                                    <textarea class="form-control"
+                                              rows="4"
+                                              id="edit_describe_visit"
+                                              name="edit_describe_visit"
+                                              placeholder="@Html.Raw(Resources.Global.Additional_information)"
+                                              maxlength="50"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1"></div>
+                        </div><!--End .form-inline-->
+                    </div><!--End .row-->
+                    <br />
+
+                    <div class="modal-footer">
+                        <button class="btn btn-default btn_remove" id="btn_remove_edited_visit" type="button" onclick="Remove_visit(this.value)">
+                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>@Html.Raw(Resources.Global.Remove)
+                        </button>
+
+                        <button class="btn btn-success" id="btn_save_edited_visit" type="submit">
+                            <span class="glyphicon glyphicon-save" aria-hidden="true"></span>@Html.Raw(Resources.Global.Save)
+                        </button>
+                    </div>
+
+                </div><!--End .modal-body-->
+
+
+            </div><!--End .modal-content -->
+        </div><!--End .modal-dialog -->
+    </div><!--End .modal -->
+</form>
+<!-- #endregion -->

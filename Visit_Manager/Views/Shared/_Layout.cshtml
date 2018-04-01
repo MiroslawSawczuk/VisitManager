@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="translate" />
+    <title>@ViewBag.Title - @Html.Raw(Resources.Global.Visit_manager) </title>
+
+    <link type="image/x-icon" rel="shortcut icon" href="~/Images/favicon.ico" />
+    <link type="image/ico" rel="icon" href="~/Images/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/bootstrap-timepicker.min.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/sweetalert.css">
+    <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/view_layout.css" />@*Custom style must be at the bottom of styles*@
+
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.min.js"></script>@*Jquery script must be always on top*@
+    <script type="text/javascript" src="~/Scripts/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+    <script type="text/javascript" src="~/Scripts/json-serialize.js"></script>
+    <script type="text/javascript" src="~/Scripts/json-serialize.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-timepicker.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/modernizr-2.8.3.js"></script>@*Supports older browsers*@
+    <script type="text/javascript" src="~/Scripts/sweetalert.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/underscore.min.js"></script>@*Supports jQuery*@
+    <script type="text/javascript" src="~/Scripts/Chart.min.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/view_layout.js"></script>@*Custom script*@
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-toggleable-xs">
+
+        <button type="button"
+                id="btn_nav_bar"
+                class="navbar-toggle pull-left visible-xs"
+                data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+            <span class="sr-only ">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <ul class="nav navbar-nav  collapse navbar-collapse navbar-ex1-collapse">
+            <li>
+                <a href="#" onclick="Go_to_view('Index')">
+                    @Html.Raw(Resources.Global.Visits)
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="Go_to_view('Admin')">
+                    @Html.Raw(Resources.Global.Admin_panel)
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Log_out", "Employee")">
+                    @Html.Raw(Resources.Global.Log_out)
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+
+
+
+        <nav id="nav_bar_inside" class="navbar-default">
+
+            @if (Session["user_session"] != null)
+            {
+                <ul class="nav navbar-nav" id="logged_as">
+                    <li>
+                        <a>
+                            @Html.Raw(Resources.Global.Logged_as)
+                            <text>&nbsp;</text>
+                            <span id="logged_user_data">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                @(((Employee)Session["user_session"]).name)
+                                <text>&nbsp;</text>
+                                @(((Employee)Session["user_session"]).surname)
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            }
+
+            <ul class="nav navbar-nav" id="logged_as">
+                <li>
+                    @*<a href="@Url.Action("Set", "Language", new { lang = "pl" }, null)" title="PL">*@
+                    <a href="#" onclick="Change_lang('pl')" title="PL">
+                        <img src="~/Images/flags_pl.png" width="16" height="11" alt="PL" />
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav" id="logged_as">
+                <li>
+                    @*<a href="@Url.Action("Set", "Language", new { lang = "en" }, null)" title="EN">*@
+                    <a href="#" onclick="Change_lang('en')" title="EN">
+                        <img src="~/Images/flags_en.png" width="16" height="11" alt="EN" />
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+    </nav>
+
+    @if ((((Employee)Session["user_session"]).id) != 1) // If user is Admin
+    {
+        <div class="container not_admin">
+            @Html.Raw(Resources.Global.You_are_not_admin)
+        </div>
+    }
+
+
+    <!-- #region Result container-->
+    <div id="result_container"></div>
+    <!-- #endregion-->
+    <!-- #region Ajax loader icon-->
+    <div id="ajax-loader">
+        <img height="100" width="100" src="~/Images/loading_icon.gif">
+    </div>
+    <!--#endregion-->
+    @RenderBody()
+
+    <div class="body-content">
+        <footer>
+            <hr />
+            <p>&copy;All rights reserved @DateTime.Now.Year - Visit Manager </p>
+        </footer>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        var logged_user_id=@(((Employee)Session["user_session"]).id);
+
+        var Resources =
+        {
+            Alert_btn_yes_remove:'@Html.Raw(Resources.Global.Alert_btn_yes_remove)',
+            Alert_btn_no_cancel:'@Html.Raw(Resources.Global.Alert_btn_no_cancel)',
+            Alert_success: '@Html.Raw(Resources.Global.Alert_success)',
+            Alert_danger: '@Html.Raw(Resources.Global.Alert_danger)',
+            Alert_btn_yes_change: '@Html.Raw(Resources.Global.Alert_btn_yes_change)',
+            Client_name_and: '@Html.Raw(Resources.Global.Client_name_and)',
+            Client_surname: '@Html.Raw(Resources.Global.Client_surname)',
+            Client_tel_number: '@Html.Raw(Resources.Global.Client_tel_number)',
+            Client_name_surname: ' @Html.Raw(Resources.Global.Client_name_surname)',
+            Confirm_title_are_you_sure: '@Html.Raw(Resources.Global.Confirm_title_are_you_sure)',
+            Confirm_cancel: '@Html.Raw(Resources.Global.Confirm_cancel)',
+            Confirm: '@Html.Raw(Resources.Global.Confirm)',
+            Cancel: '@Html.Raw(Resources.Global.Cancel)',
+            Confirm_remove_employee:'@Html.Raw(Resources.Global.Confirm_remove_employee)',
+            Confirm_remove_employee_logg:'@Html.Raw(Resources.Global.Confirm_remove_employee_logg)',
+            Confirm_change_password: '@Html.Raw(Resources.Global.Confirm_change_password)',
+            Confirm_remove_visit_type: '@Html.Raw(Resources.Global.Confirm_remove_visit_type)',
+            Confirm_edit_visit_type: '@Html.Raw(Resources.Global.Confirm_edit_visit_type)',
+            Confirm_edit_employee: '@Html.Raw(Resources.Global.Confirm_edit_employee)',
+            Edit: '@Html.Raw(Resources.Global.Edit)',
+            Employee_removed:'@Html.Raw(Resources.Global.Employee_removed)',
+            Employee_removed_login_again:'@Html.Raw(Resources.Global.Employee_removed_login_again)',
+            No_data_to_display: '@Html.Raw(Resources.Global.No_data_to_display)',
+            No_visits_to_display: '@Html.Raw(Resources.Global.No_visits_to_display)',
+            Price: '@Html.Raw(Resources.Global.Price)',
+            Select_doctor: '@Html.Raw(Resources.Global.Select_doctor)',
+            Select_visit_type: '@Html.Raw(Resources.Global.Select_visit_type)',
+            Session_expired: '@Html.Raw(Resources.Global.Session_expired)',
+            Session_expired_sign_in_again: '@Html.Raw(Resources.Global.Session_expired_sign_in_again)',
+            Total_visit_cost: '@Html.Raw(Resources.Global.Total_visit_cost)',
+            Total_visit_count: '@Html.Raw(Resources.Global.Total_visit_count)',
+            Visit_time1: '@Html.Raw(Resources.Global.Visit_time1)',
+            Visit_time2: '@Html.Raw(Resources.Global.Visit_time2)',
+            Visit_type: '@Html.Raw(Resources.Global.Visit_type)',
+            Visit_describe: '@Html.Raw(Resources.Global.Visit_describe)',
+            Visit_time: '@Html.Raw(Resources.Global.Visit_time)',
+            Visit_count: '@Html.Raw(Resources.Global.Visit_count)',
+            Warning_password_the_same: '@Html.Raw(Resources.Global.Warning_password_the_same)',
+            Warning_cancel_visit: '@Html.Raw(Resources.Global.Warning_cancel_visit)',
+            Warning_edit_employee_cancel: '@Html.Raw(Resources.Global.Warning_edit_employee_cancel)',
+            Warning_edit_visit_type_cancel: '@Html.Raw(Resources.Global.Warning_edit_visit_type_cancel)',
+            Warning_password_changed: '@Html.Raw(Resources.Global.Warning_password_changed)',
+            Warning_change_password_cancel: '@Html.Raw(Resources.Global.Warning_change_password_cancel)',
+            Warning_remove_visit_type_cancel :'@Html.Raw(Resources.Global.Warning_remove_visit_type_cancel)',
+            Warning_remove_employee_cancel :'@Html.Raw(Resources.Global.Warning_remove_employee_cancel)',
+
+            Sunday: '@Html.Raw(Resources.Global.Sunday)',
+            Monday: '@Html.Raw(Resources.Global.Monday)',
+            Tuesday: '@Html.Raw(Resources.Global.Tuesday)',
+            Wednesday: '@Html.Raw(Resources.Global.Wednesday)',
+            Thursday: '@Html.Raw(Resources.Global.Thursday)',
+            Friday: '@Html.Raw(Resources.Global.Friday)',
+            Saturday: '@Html.Raw(Resources.Global.Saturday)',
+            January: '@Html.Raw(Resources.Global.January)',
+            February: '@Html.Raw(Resources.Global.February)',
+            March: '@Html.Raw(Resources.Global.March)',
+            April: '@Html.Raw(Resources.Global.April)',
+            May: '@Html.Raw(Resources.Global.May)',
+            June: '@Html.Raw(Resources.Global.June)',
+            July: '@Html.Raw(Resources.Global.July)',
+            August: '@Html.Raw(Resources.Global.August)',
+            September: '@Html.Raw(Resources.Global.September)',
+            October: '@Html.Raw(Resources.Global.October)',
+            November: '@Html.Raw(Resources.Global.November)',
+            December: '@Html.Raw(Resources.Global.December)',
+        };
+
+
+    </script>
+
+
+
+
+</body>
+</html>

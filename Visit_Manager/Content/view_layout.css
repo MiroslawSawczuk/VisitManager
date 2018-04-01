@@ -1,0 +1,151 @@
+﻿body.modal-open {
+    overflow: hidden;
+}
+
+footer {
+    bottom: 0px;
+    margin-left: 5vw;
+}
+
+    footer hr {
+        margin-top: -1px;
+    }
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    padding: 0;
+    align-content: center;
+}
+
+body.modal-open {
+    padding-right: 0px !important;
+}
+
+.input-group { /*Needed for CSS work: width 100% for ddl in modal window */
+    width: 100%;
+}
+
+.input-group-addon:not(#dp_range) {
+    width: 43px !important;
+    height: 34px !important;
+}
+
+.btn_remove {
+    color: red;
+}
+
+    .btn_remove:hover {
+        color: red;
+    }
+
+.body-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.modal {
+    z-index: 3; /* Above .modal-backdrop */
+}
+
+.modal-body {
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.modal-backdrop {
+    background-color: #818181;
+    z-index: 2; /* Under .modal */
+}
+
+.alert {
+    position: fixed;
+    z-index: 10 !important;
+    min-width: 100%;
+    top: 0;
+    margin-bottom: 50px;
+    opacity: 0.95;
+}
+
+.glyphicon {
+    margin-right: 5px;
+}
+
+.fa {
+    margin-left: 5px;
+}
+
+.glyphicon, .fa {
+    margin-right: 4px;
+}
+
+.flags {
+    padding: 10px;
+}
+
+.not_admin {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: red;
+}
+
+#btn_nav_bar {
+    margin: 10px;
+}
+
+#top_nav_bar {
+    z-index: 1;
+    right: 0;
+}
+
+#logged_user_data {
+    color: #5bc0de;
+}
+
+#logged_as {
+    float: right;
+    padding: 0;
+    margin-right: 10px;
+}
+
+#ajax-loader {
+    visibility: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #858585;
+    opacity: 0.3;
+    z-index: 10; /* Always on top */
+}
+
+    #ajax-loader img {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: -50px; /* Set to a negative number 1/2 of your height */
+        margin-left: -50px; /* Set to a negative number 1/2 of your width */
+        opacity: 1;
+    }
+
+#nav_bar_inside {
+    padding-bottom: 13px;
+}
+
+    #nav_bar_inside a {
+        padding-left: 5px;
+        padding-right: 5px;
+    }

@@ -1,0 +1,16 @@
+﻿#div_dp_range {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#dp_range, input[name=daterangepicker_start], input[name=daterangepicker_end] {
+    background-color: white;
+    text-align: center;
+    z-index: 1; /* At the bottom */
+}
+
+#bottom_charts_div {
+    background-color: #F6F6F6;
+    padding: 0;
+    margin: 0;
+}

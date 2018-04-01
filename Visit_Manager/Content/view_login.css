@@ -1,0 +1,27 @@
+﻿body {
+    background-color: #F6F6F6;
+}
+
+.center {
+    position: center;
+    width: 100%;
+}
+
+.valid_message {
+    color: red;
+}
+
+.glyphicon, .fa {
+    margin-right: 5px;
+}
+
+.welcome {
+    margin-top: 10%;
+    position: center;
+    font-size: large;
+}
+
+.welcome_2nd_line {
+    font-size: 14px;
+    font-weight: 500;
+}

@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Html.Raw(Resources.Global.Error_404)</title>
+
+    <link href="~/Images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Images/favicon.ico" rel="icon" type="image/ico" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="~/Content/view_error_404.css" />@*Custom style must be at the bottom of styles*@
+
+    <!-- Include Required Prerequisites -->
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>@*Jquery script must be always on top*@
+    <script src="~/Scripts/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container center">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1>404</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class=" col-md-12">
+                <h2>@Html.Raw(Resources.Global.Error) &nbsp;<span>@Html.Raw(Resources.Global.Page_not_found)</span></h2>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <p>@Html.Raw(Resources.Global.For_some_reason)</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p><a href="@Url.Action("Index", "Visit")">@Html.Raw(Resources.Global.Go_to_visit) &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

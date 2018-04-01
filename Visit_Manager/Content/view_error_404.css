@@ -1,0 +1,13 @@
+﻿body {
+    text-align: center;
+}
+
+h1 {
+    color: #555;
+    font-size: 5em;
+    font-weight: 400;
+}
+
+.center {
+    margin-top: 8%;
+}

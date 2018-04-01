@@ -1,0 +1,109 @@
+﻿@media (max-width:767px) {
+    .btn_change_date {
+        display: block;
+        width: 100%;
+    }
+
+    #btn_new_visit {
+        display: block;
+        width: 100%;
+    }
+
+    #div_table_mobile_visit {
+        display: block;
+    }
+
+    #div_table_visit {
+        display: none;
+    }
+}
+
+@media (min-width:768px) {
+    #div_table_mobile_visit {
+        display: none;
+    }
+
+    #div_table_visit {
+        display: block;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+thead {
+    font-weight: bold;
+}
+
+div.datepicker.dropdown-menu {
+    z-index: 4; /* Above .moda */
+}
+
+.glyphicon-chevron-left, .glyphicon-chevron-right {
+    color: #33CCFF;
+}
+
+.table_visit {
+    table-layout: fixed;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.employee_icon_name {
+    color: #337ab7;
+}
+
+.datepicker {
+    padding: 6px 12px 6px 12px;
+    margin: 0px;
+    z-index: 1; /* At the bottom */
+}
+
+.padding_0 {
+    padding: 0px 5px 0px 5px;
+}
+
+.margin_top {
+    margin-top: 15px;
+}
+
+.blue_color {
+    color: #33CCFF;
+}
+
+.grey_color {
+    color: #ddd;
+}
+
+.btn_change_date,
+#label_top_datepicker,
+#div_top_datepicker,
+#btn_new_visit {
+    margin-top: 37px;
+}
+
+#top_datepicker,
+#add_visit_date, #add_start_time, #add_end_time,
+#edit_visit_date, #edit_start_time, #edit_end_time {
+    background-color: white;
+}
+
+#top_datepicker {
+    text-align: center;
+}
+
+#top, #is_clients {
+    padding-top: 15px;
+    margin-top: 0px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}
+
+#div_visit {
+    padding: 0px;
+}
+
+#btn_new_visit {
+    margin-right: 5px;
+}

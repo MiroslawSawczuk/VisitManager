@@ -1,0 +1,690 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Additional" xml:space="preserve">
+    <value>Additional</value>
+  </data>
+  <data name="Additional_information" xml:space="preserve">
+    <value>Additional information</value>
+  </data>
+  <data name="Add_visit" xml:space="preserve">
+    <value>Add visit</value>
+  </data>
+  <data name="Admin_panel" xml:space="preserve">
+    <value>Admin Panel</value>
+  </data>
+  <data name="April" xml:space="preserve">
+    <value>April</value>
+  </data>
+  <data name="August" xml:space="preserve">
+    <value>August</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Change_password" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Client" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="Client_name" xml:space="preserve">
+    <value>Client name</value>
+  </data>
+  <data name="Client_name_and" xml:space="preserve">
+    <value>Client name &amp;</value>
+  </data>
+  <data name="Client_surname" xml:space="preserve">
+    <value>Client surname</value>
+  </data>
+  <data name="Client_tel_number" xml:space="preserve">
+    <value>Client tel. number</value>
+  </data>
+  <data name="Completed" xml:space="preserve">
+    <value>COMPLETED</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Confirm_edit_visit_type" xml:space="preserve">
+    <value>Are you sure you want to change the data of this type of visit.</value>
+  </data>
+  <data name="Confirm_remove_employee" xml:space="preserve">
+    <value>Are you sure you want to remove this employee?</value>
+  </data>
+  <data name="Confirm_remove_visit_type" xml:space="preserve">
+    <value>Are you sure you want to remove this visit type?</value>
+  </data>
+  <data name="Confirm_cancel" xml:space="preserve">
+    <value>Are you sure you want to remove this visit?</value>
+  </data>
+  <data name="Cost_of_visit" xml:space="preserve">
+    <value>Cost of visit</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="December" xml:space="preserve">
+    <value>December</value>
+  </data>
+  <data name="Describe_visit" xml:space="preserve">
+    <value>describe visit</value>
+  </data>
+  <data name="Doctor" xml:space="preserve">
+    <value>Doctor:</value>
+  </data>
+  <data name="Download_excel" xml:space="preserve">
+    <value>Download excel</value>
+  </data>
+  <data name="Download_pdf" xml:space="preserve">
+    <value>Download pdf</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Edit_employee" xml:space="preserve">
+    <value>Doctor's edition</value>
+  </data>
+  <data name="Edit_remove_employee" xml:space="preserve">
+    <value>Edit/remove doctor</value>
+  </data>
+  <data name="Edit_remove_visit_type" xml:space="preserve">
+    <value>Edit/remove visit type</value>
+  </data>
+  <data name="Edit_visit" xml:space="preserve">
+    <value>Edit visit</value>
+  </data>
+  <data name="Edit_visit_type" xml:space="preserve">
+    <value>Edit the type of visit</value>
+  </data>
+  <data name="Email_adress" xml:space="preserve">
+    <value>Email adress</value>
+  </data>
+  <data name="Result_email_visit_added_error" xml:space="preserve">
+    <value>There was a problem sending the email  about the appointment. Review the correctness of the entered data and try again.</value>
+  </data>
+  <data name="Result_email_visit_added_correct" xml:space="preserve">
+    <value>An email with information about the appointment has been sent.</value>
+  </data>
+  <data name="Employee" xml:space="preserve">
+    <value>Employee</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>End</value>
+  </data>
+  <data name="End_time" xml:space="preserve">
+    <value>Visit end</value>
+  </data>
+  <data name="February" xml:space="preserve">
+    <value>February</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Fri</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hour:</value>
+  </data>
+  <data name="If_you_have_any_questions" xml:space="preserve">
+    <value>If you have any questions, please call:</value>
+  </data>
+  <data name="January" xml:space="preserve">
+    <value>January</value>
+  </data>
+  <data name="July" xml:space="preserve">
+    <value>July</value>
+  </data>
+  <data name="June" xml:space="preserve">
+    <value>June</value>
+  </data>
+  <data name="Logged_as" xml:space="preserve">
+    <value>Logged as:</value>
+  </data>
+  <data name="Login_incorrect" xml:space="preserve">
+    <value>The login entered is incorrect</value>
+  </data>
+  <data name="Log_out" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="March" xml:space="preserve">
+    <value>March</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Message_was_generated_automatically" xml:space="preserve">
+    <value>WARNING! This message was generated automatically by the website</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Mon</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New_employee" xml:space="preserve">
+    <value>New doctor</value>
+  </data>
+  <data name="New_visit" xml:space="preserve">
+    <value>New visit</value>
+  </data>
+  <data name="New_visit_type" xml:space="preserve">
+    <value>New visit type</value>
+  </data>
+  <data name="November" xml:space="preserve">
+    <value>November</value>
+  </data>
+  <data name="No_data_to_display" xml:space="preserve">
+    <value>No data to display.</value>
+  </data>
+  <data name="No_visits_to_display" xml:space="preserve">
+    <value>No appointments scheduled on the selected date.</value>
+  </data>
+  <data name="October" xml:space="preserve">
+    <value>October</value>
+  </data>
+  <data name="Order_visit" xml:space="preserve">
+    <value>Order visit</value>
+  </data>
+  <data name="Other_visit_type" xml:space="preserve">
+    <value>Other visit type</value>
+  </data>
+  <data name="Our_adress" xml:space="preserve">
+    <value>Address of our headquarters:</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Password_change" xml:space="preserve">
+    <value>Password change</value>
+  </data>
+  <data name="Password_confirm" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Password_current" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="Password_incorrect" xml:space="preserve">
+    <value>The password entered is incorrect</value>
+  </data>
+  <data name="Password_must_contain" xml:space="preserve">
+    <value>The password must contain 2-10 characters</value>
+  </data>
+  <data name="Password_new" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="Password_new_confirm" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+  <data name="Please_do_not_answer_it" xml:space="preserve">
+    <value>Please do not answer it.</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Result_employee_added_correct" xml:space="preserve">
+    <value>A new employee has been successfully added.</value>
+  </data>
+  <data name="Result_employee_added_error" xml:space="preserve">
+    <value>There was a problem adding a new employee. Please check the correctness of the data and try again.</value>
+  </data>
+  <data name="Result_employee_already_exist_in_db" xml:space="preserve">
+    <value>An employee with this name and surname already exists. Change the data and try again.</value>
+  </data>
+  <data name="Result_employee_edit_correct" xml:space="preserve">
+    <value>Employee data has been successfully changed.</value>
+  </data>
+  <data name="Result_employee_edit_error" xml:space="preserve">
+    <value>There was a problem with changing employee data. Please check the correctness of the data and try again.</value>
+  </data>
+  <data name="Result_employee_removed_correct" xml:space="preserve">
+    <value>The employee has been successfully removed.</value>
+  </data>
+  <data name="Result_employee_removed_error" xml:space="preserve">
+    <value>There was a problem removing the employee. Please try again later.</value>
+  </data>
+  <data name="Result_no_changes_in_form" xml:space="preserve">
+    <value>No changes were made to the form.</value>
+  </data>
+  <data name="Result_password_changing_error" xml:space="preserve">
+    <value>There was a problem changing the password. Change the data and try again.</value>
+  </data>
+  <data name="Result_start_visit_must_be_earlier" xml:space="preserve">
+    <value>The start of the visit must be an hour earlier than the end of the visit.</value>
+  </data>
+  <data name="Result_visit_added_correct" xml:space="preserve">
+    <value>The visit has been added corret.</value>
+  </data>
+  <data name="Result_visit_frame_time_incorrect" xml:space="preserve">
+    <value>Oops ... it's impossible to arrange a visit at the times you chose. The time frame of the visit already includes another visit of the day. Choose different hours of the visit and try again.</value>
+  </data>
+  <data name="Result_visit_removed_correct" xml:space="preserve">
+    <value>The visit has been properly canceled.</value>
+  </data>
+  <data name="Result_visit_removed_error" xml:space="preserve">
+    <value>There was a problem canceling the visit. Please try again later.</value>
+  </data>
+  <data name="Result_visit_edit_error" xml:space="preserve">
+    <value>There was a problem with saving the visit to the database. Review the correctness of the entered data and try again.</value>
+  </data>
+  <data name="Result_visit_type_added_correct" xml:space="preserve">
+    <value>A new type of visit has been successfully added.</value>
+  </data>
+  <data name="Result_visit_type_added_error" xml:space="preserve">
+    <value>There was a problem adding a new type of visit. Please check the correctness of the data and try again.</value>
+  </data>
+  <data name="Result_visit_type_already_exist_in_db" xml:space="preserve">
+    <value>A visit type with the same name already exists. Change the data and try again.</value>
+  </data>
+  <data name="Result_visit_type_edit_error" xml:space="preserve">
+    <value>There was a problem with changing the name of the type of visit. Please try again later.</value>
+  </data>
+  <data name="Result_visit_type_edit_correct" xml:space="preserve">
+    <value>The name of the visit type has been changed.</value>
+  </data>
+  <data name="Result_visit_type_removed_correct" xml:space="preserve">
+    <value>The type of visit from the database has been successfully removed.</value>
+  </data>
+  <data name="Result_visit_type_removed_error" xml:space="preserve">
+    <value>There was a problem removing the type of visit from the database. Please try again later.</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sat</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="See_you_later" xml:space="preserve">
+    <value>See you later!</value>
+  </data>
+  <data name="Select_data_range" xml:space="preserve">
+    <value>Select the data range. Below statistics of</value>
+  </data>
+  <data name="Select_doctor" xml:space="preserve">
+    <value>Select doctor</value>
+  </data>
+  <data name="Select_visit_type" xml:space="preserve">
+    <value>Select visit type</value>
+  </data>
+  <data name="September" xml:space="preserve">
+    <value>September</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Start_time" xml:space="preserve">
+    <value>Visit begin</value>
+  </data>
+  <data name="Street" xml:space="preserve">
+    <value>Street:</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sun</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="Telephone_number" xml:space="preserve">
+    <value>Telephone number</value>
+  </data>
+  <data name="Tel_number" xml:space="preserve">
+    <value>Tel. number</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Thu</value>
+  </data>
+  <data name="Total_visit_count" xml:space="preserve">
+    <value>Total number of visits made</value>
+  </data>
+  <data name="Total_visit_cost" xml:space="preserve">
+    <value>Total visit cost</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Tue</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Unclassified" xml:space="preserve">
+    <value>unclassified</value>
+  </data>
+  <data name="Unclassified_type" xml:space="preserve">
+    <value>Unclassified type</value>
+  </data>
+  <data name="Visits" xml:space="preserve">
+    <value>Visits</value>
+  </data>
+  <data name="Visits_on" xml:space="preserve">
+    <value>Visits on:</value>
+  </data>
+  <data name="Visit_count" xml:space="preserve">
+    <value>Visit count</value>
+  </data>
+  <data name="Visit_date" xml:space="preserve">
+    <value>Visit date</value>
+  </data>
+  <data name="Visit_describe" xml:space="preserve">
+    <value>Visit describe</value>
+  </data>
+  <data name="Visit_edited" xml:space="preserve">
+    <value>The visit was correctly edited</value>
+  </data>
+  <data name="Result_visit_added_error" xml:space="preserve">
+    <value>There was a problem adding the visit. Review the correctness of the entered data and try again.</value>
+  </data>
+  <data name="Visit_time1" xml:space="preserve">
+    <value>Visit</value>
+  </data>
+  <data name="Visit_time2" xml:space="preserve">
+    <value>time</value>
+  </data>
+  <data name="Visit_type" xml:space="preserve">
+    <value>Type of visit</value>
+  </data>
+  <data name="Warning_cancel_visit" xml:space="preserve">
+    <value>The removal of the visit was canceled.</value>
+  </data>
+  <data name="Warning_password_changed" xml:space="preserve">
+    <value>Password has been changed successfully. The website will be logged out in a moment. Sign in again.</value>
+  </data>
+  <data name="Warning_password_the_same" xml:space="preserve">
+    <value>The Password and Confirm password fields must contain the same value.</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Wed</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="We_are_pleased_to_inform" xml:space="preserve">
+    <value>We are pleased to inform you that we will meet soon :)</value>
+  </data>
+  <data name="y" xml:space="preserve">
+    <value>y.</value>
+  </data>
+  <data name="Your_dentist" xml:space="preserve">
+    <value>Dentist</value>
+  </data>
+  <data name="Your_visit" xml:space="preserve">
+    <value>Your visit:</value>
+  </data>
+  <data name="Your_visit_canceled" xml:space="preserve">
+    <value>Your visit has been canceled.</value>
+  </data>
+  <data name="Dentist_visit" xml:space="preserve">
+    <value>Dentist's visit.</value>
+  </data>
+  <data name="_visits" xml:space="preserve">
+    <value> visits.</value>
+  </data>
+  <data name="Confirm_change_password" xml:space="preserve">
+    <value>Are you sure you want to change your password?</value>
+  </data>
+  <data name="Confirm_edit_employee" xml:space="preserve">
+    <value>Are you sure you want to change the data of this employee?</value>
+  </data>
+  <data name="End_visit" xml:space="preserve">
+    <value>End visit</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Login_must_contain" xml:space="preserve">
+    <value>The login must contain 3-25 characters</value>
+  </data>
+  <data name="Login_name_surname" xml:space="preserve">
+    <value>Login: name.surname</value>
+  </data>
+  <data name="Login_required" xml:space="preserve">
+    <value>Login field is required</value>
+  </data>
+  <data name="Sign_In" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Password_required" xml:space="preserve">
+    <value>Password field is required</value>
+  </data>
+  <data name="Remember_me" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="Required_field" xml:space="preserve">
+    <value>This field is required</value>
+  </data>
+  <data name="Result_email_visit_removed_correct" xml:space="preserve">
+    <value>An email with information about the canceling visit has been sent.</value>
+  </data>
+  <data name="Result_visit_edit_correct" xml:space="preserve">
+    <value>Visit data has been successfully changed.</value>
+  </data>
+  <data name="Start_visit" xml:space="preserve">
+    <value>Start visit</value>
+  </data>
+  <data name="Surname2" xml:space="preserve">
+    <value>surname</value>
+  </data>
+  <data name="Additional_info" xml:space="preserve">
+    <value>Additional info.</value>
+  </data>
+  <data name="Result_email_visit_removed_error" xml:space="preserve">
+    <value>There was a problem sending the email  about the canceling visit. Review the correctness of the entered data and try again.</value>
+  </data>
+  <data name="Welcome_info" xml:space="preserve">
+    <value>Welcome to the Visit manager !</value>
+  </data>
+  <data name="Welcome_info_2nd_line" xml:space="preserve">
+    <value>Sign in to be able to use it.</value>
+  </data>
+  <data name="Visit_manager" xml:space="preserve">
+    <value>Visit Manager</value>
+  </data>
+  <data name="Alert_btn_no_cancel" xml:space="preserve">
+    <value>No, cancel!</value>
+  </data>
+  <data name="Alert_btn_yes_change" xml:space="preserve">
+    <value>Yes, change it!</value>
+  </data>
+  <data name="Alert_btn_yes_edit" xml:space="preserve">
+    <value>Yes, edit it!</value>
+  </data>
+  <data name="Alert_btn_yes_remove" xml:space="preserve">
+    <value>Yes, remove it!</value>
+  </data>
+  <data name="Alert_danger" xml:space="preserve">
+    <value>Danger!</value>
+  </data>
+  <data name="Alert_success" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="Alert_warning" xml:space="preserve">
+    <value>Warning!</value>
+  </data>
+  <data name="Confirm_title_are_you_sure" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="Warning_change_password_cancel" xml:space="preserve">
+    <value>The password change has been canceled.</value>
+  </data>
+  <data name="Warning_edit_employee_cancel" xml:space="preserve">
+    <value>The edition of employee data was canceled.</value>
+  </data>
+  <data name="Warning_edit_visit_type_cancel" xml:space="preserve">
+    <value>The edition of type of visit was canceled.</value>
+  </data>
+  <data name="Warning_remove_employee_cancel" xml:space="preserve">
+    <value>The removal of this emloyee was canceled.</value>
+  </data>
+  <data name="Warning_remove_visit_type_cancel" xml:space="preserve">
+    <value>The removal of this visit type was canceled.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error ! </value>
+  </data>
+  <data name="Error_404" xml:space="preserve">
+    <value>Error 404</value>
+  </data>
+  <data name="For_some_reason" xml:space="preserve">
+    <value>For Some Reason The Page You Requested Could Not Be Found On Our Server</value>
+  </data>
+  <data name="Go_to_visit" xml:space="preserve">
+    <value>Go to visit page</value>
+  </data>
+  <data name="Page_not_found" xml:space="preserve">
+    <value> Page Not Found</value>
+  </data>
+  <data name="Result_email_visit_edited_correct" xml:space="preserve">
+    <value>An email with information about the edited visit has been sent.</value>
+  </data>
+  <data name="Result_email_visit_edited_error" xml:space="preserve">
+    <value>There was a problem sending the email  about the edited visit. Review the correctness of the entered data and try again.</value>
+  </data>
+  <data name="Your_visit_edited" xml:space="preserve">
+    <value>Your visit has been edited.</value>
+  </data>
+  <data name="Confirm_remove_employee_logg" xml:space="preserve">
+    <value>Are you sure you want to remove currently logged user? You will need to log in again.</value>
+  </data>
+  <data name="Employee_removed" xml:space="preserve">
+    <value>Employee removed!</value>
+  </data>
+  <data name="Employee_removed_login_again" xml:space="preserve">
+    <value>The employee has been properly removed. You must log in again to another account.</value>
+  </data>
+  <data name="Session_expired" xml:space="preserve">
+    <value>The session has expired.</value>
+  </data>
+  <data name="Session_expired_sign_in_again" xml:space="preserve">
+    <value>The session has expired. You must log in again.</value>
+  </data>
+  <data name="Client_name_surname" xml:space="preserve">
+    <value>Client name &amp; surname</value>
+  </data>
+  <data name="Visit_time" xml:space="preserve">
+    <value>Visit time</value>
+  </data>
+  <data name="You_are_not_admin" xml:space="preserve">
+    <value>You do not have administrator rights. Some features may not be available.</value>
+  </data>
+  <data name="Result_enable_to_get_employee" xml:space="preserve">
+    <value>It was not possible to download employee data.</value>
+  </data>
+  <data name="Result_enable_to_get_visit_type" xml:space="preserve">
+    <value>It was not possible to download visit type data</value>
+  </data>
+</root>
